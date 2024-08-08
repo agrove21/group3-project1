@@ -15,36 +15,4 @@ document
       fetchDogBreeds();
     }
   });
-function fetchCatBreeds() {
-  fetch(`${catBaseUrl}/breeds`)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      showBreeds(data);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-}
-function fetchDogBreeds() {
-  fetch(`${dogBaseUrl}/breeds`)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      showBreeds(data);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-}
 
-function showBreeds(breeds) {
-  const breedsDropdown = document.getElementById("select-breed");
-  let options = '<option value="">Select Breed</option>';
-  for (const breed of breeds) {
-    options += `<option value="">${breed.name}</option>`;
-  }
-  breedsDropdown.innerHTML = options;
-}
