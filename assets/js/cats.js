@@ -33,9 +33,9 @@ function showModalData(data) {
   const modalBody = document.querySelector(".modal-card-body");
   const image = `<img src="https://cdn2.thecatapi.com/images/${data.reference_image_id}.jpg"/>`;
   const lifeSpan = `<h3> <strong>Life Span:</strong> ${data.life_span} years </h3>`;
-  const origin = `<h3> <strong>Origin:</strong> ${data.origin}</h3>`;
+  const weight = `<h3> <strong>Weight:</strong> ${data.weight.imperial} lbs.</h3>`;
   const temperament = `<h3> <strong>Temperament:</strong> ${data.temperament}</h3>`;
-  modalBody.innerHTML = image + lifeSpan + origin + temperament;
+  modalBody.innerHTML = image + lifeSpan + weight + temperament;
 }
 
 function showBreeds(breeds) {
