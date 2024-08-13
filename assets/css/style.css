@@ -9,20 +9,12 @@ main {
   padding: 2em;
 }
 
-#search-section {
-  text-align: center;
-}
-
-#results-section {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1em;
-  justify-content: center;
-}
-
 .pet-btn {
-  width: fit-content;
-  margin: auto;
+  display: flex;
+  margin-top: 1em;
+  margin-bottom: 4em;
+  justify-content: center;
+  gap: 2em;
 }
 
 .pet-btn a {
@@ -40,4 +32,17 @@ main {
   gap: 2rem;
   align-items: center;
   justify-content: center;
+}
+
+.breeds-container button {
+  padding: 20px 60px;
+}
+.red {
+  color: tomato;
+}
+.breed-item {
+  display: flex;
+}
+.breed-item img {
+  width: 75px;
 }
