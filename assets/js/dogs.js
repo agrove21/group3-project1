@@ -23,19 +23,11 @@ const dogApiKey =
       })
       .then(function (data) {
         showModalData(data);
+        selectedPet = data;
       })
       .catch(function (error) {
         console.log(error);
       });
-  }
-
-  function showBreeds(breeds) {
-    const breedsContainer = document.querySelector(".breeds-container");
-    let buttonHTML = "";
-    for (const breed of breeds) {
-      buttonHTML += `<button id= ${breed.id} class= "button is-light">${breed.name}</button>`;
-    }
-    breedsContainer.innerHTML = buttonHTML;
   }
 
   function showModalData(data) {
@@ -46,29 +38,6 @@ const dogApiKey =
     const weight = `<h3> <strong>Weight:</strong> ${data.weight.imperial} lbs.</h3>`;
     const temperament = `<h3> <strong>Temperament:</strong> ${data.temperament}</h3>`;
     modalBody.innerHTML = image + lifeSpan + weight + temperament;
-  }
-  
-  function showBreeds(breeds) {
-    const breedsContainer = document.querySelector(".breeds-container");
-    let buttonHTML = "";
-    for (const breed of breeds) {
-      buttonHTML += `<button id= ${breed.id} class= "button is-light">${breed.name}</button>`;
-    }
-  
-    breedsContainer.innerHTML = buttonHTML;
-    document.querySelectorAll(".breeds-container button").forEach(function (btn) {
-      btn.addEventListener("click", function (event) {
-        getBreedById(event.target.id);
-        toggleModal();
-      });
-    });
-  }
-  
-  document.querySelector(".delete").addEventListener("click", function () {
-    toggleModal();
-  });
-  function toggleModal() {
-    document.getElementById("modal").classList.toggle("is-active");
   }
 
   window.onload = fetchDogBreeds;
