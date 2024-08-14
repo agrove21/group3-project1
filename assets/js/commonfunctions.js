@@ -17,6 +17,7 @@ function showBreeds(breeds) {
   document.querySelectorAll(".breeds-container button").forEach(function (btn) {
     btn.addEventListener("click", function (event) {
       getBreedById(event.target.id);
+      checkIfFavorite(event.target.id)
       toggleModal();
     });
   });
@@ -36,13 +37,7 @@ function saveToLocalStorage(favoritePets) {
   localStorage.setItem("favoritePets", JSON.stringify(favoritePets));
 }
 
-function removeFromStorage(id) {
-  const savedFavoritePets = getFavoritePetsFromStorage();
-  const updatedFavorites = savedFavoritePets.filter((pet) => pet.id != id);
-  saveToLocalStorage(updatedFavorites);
-  showBreeds(updatedFavorites);
-  toggleModal();
-}
+
 
 document.querySelector(".delete").addEventListener("click", function () {
   toggleModal();
@@ -50,6 +45,18 @@ document.querySelector(".delete").addEventListener("click", function () {
 
 function toggleModal() {
   document.getElementById("modal").classList.toggle("is-active");
+}
+
+function checkIfFavorite(id) {
+  const savedFavoritePets = getFavoritePetsFromStorage();
+  const updatedFavorites = savedFavoritePets.filter((pet) => pet.id == id);
+  if (updatedFavorites.length > 0) {
+    const favIcon = document.querySelector(".favorite .icon");
+    favIcon.classList.add("red");
+  } else {
+    const favIcon = document.querySelector(".favorite .icon");
+    favIcon.classList.remove("red");
+  }
 }
 
 const favoriteEl = document.querySelector(".favorite");

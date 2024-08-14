@@ -40,5 +40,12 @@ const dogApiKey =
     modalBody.innerHTML = image + lifeSpan + weight + temperament;
   }
 
+  function removeFromStorage(id) {
+    const savedFavoritePets = getFavoritePetsFromStorage();
+    const updatedFavorites = savedFavoritePets.filter((pet) => pet.id != id);
+    saveToLocalStorage(updatedFavorites);
+    toggleModal();
+  }
+
   window.onload = fetchDogBreeds;
 
