@@ -22,3 +22,11 @@ function showModalData(data) {
   const temperament = `<h3> <strong>Temperament:</strong> ${data.temperament}</h3>`;
   modalBody.innerHTML = image + lifeSpan + weight + temperament;
 }
+
+function removeFromStorage(id) {
+  const savedFavoritePets = getFavoritePetsFromStorage();
+  const updatedFavorites = savedFavoritePets.filter((pet) => pet.id != id);
+  saveToLocalStorage(updatedFavorites);
+  showBreeds(updatedFavorites);
+  toggleModal();
+}
