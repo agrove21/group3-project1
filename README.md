@@ -1,5 +1,3 @@
-# group3-project1
-
 # <Furry-Friend-Finder>
 
 ## Description
@@ -24,11 +22,11 @@ Two server side API’s were used to provide cat and dog breed information.
 
 ## Usage
 
-## Deployed Website Link
+### Deployed Website URL:
 
 https://agrove21.github.io/group3-project1/
 
-## Screenshot
+### Screenshot
 
 <!-- <img src="assets\images\Screenshot 2024-07-21 150534.png" width="800px">
 <img src="assets\images\Page_two.png" width="800px"> -->
