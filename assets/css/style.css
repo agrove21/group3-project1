@@ -21,6 +21,11 @@ main {
 
 h2 {
   margin-top: 2em;
+  color: #2b0b4f;
+}
+
+p {
+  color: #2b0b4f
 }
 .pet-btn {
   display: flex;
